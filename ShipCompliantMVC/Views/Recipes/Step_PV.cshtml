@@ -1,0 +1,18 @@
+﻿@model ShipCompliantMVC.Models.Step
+
+<div class="editorRow">
+    @using(Html.BeginCollectionItem("Steps")) {
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.Description)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Num)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.Num, new {@Value = 1})
+        </div>
+    }
+</div>

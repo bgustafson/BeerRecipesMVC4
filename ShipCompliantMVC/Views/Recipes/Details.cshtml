@@ -1,0 +1,123 @@
+﻿@model ShipCompliantMVC.Models.Recipe
+@using ShipCompliantMVC.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<article>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Ingredients)
+    </div>
+    <div class="display-field">
+        @foreach (Ingredient i in Model.Ingredients)
+        {
+            <div>
+                <div>@i.Amount @i.Unit @i.Name</div>
+            </div>
+        }
+    </div>
+        
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Steps)
+    </div>
+    <div class="display-field">
+        @foreach (Step s in Model.Steps)
+        {
+            <div>
+                <div>@s.Num) @s.Description</div>
+            </div>
+        }
+    </div>
+</article>
+
+<aside>
+    <fieldset>
+        <legend>Recipe</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DateAdded)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Rating)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Rating)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Style)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Style)
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.MashType)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MashType)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PrepTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PrepTime)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Cost)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Cost)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PrimaryFermentDays)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PrimaryFermentDays)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.SecondaryFermentDays)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SecondaryFermentDays)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Review", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</aside>
+
+

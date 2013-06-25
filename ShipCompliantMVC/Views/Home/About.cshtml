@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        The home page is the default landing page from which you can navigate to other locations.  The About page and the Contacts page are both working.
+        The side panel on the first page with the details button will take you directly to the details page for that recipe of the month.
+        Clicking on recipes brings you to the recipe index page.  From there, there are links to get details, review, find and submit new recipes.
+        
+    </p>
+    
+    <p>
+        Extensions to this application would be to get the list from the home page working so that all that functionality exists.  And then the rating 
+        systems needs to be defined.  This would likely be done by creating a rating table related to the recipe so that ther can be many reviews for 
+        each recipe.  This will also mean that the rating field currently stored in the recipe table should either be removed and calculated on the fly, 
+        or a trigger should be created that keeps that field up to date with the average rating for that recipe.
+    </p>
+
+    <p>
+        This is an ASP.NET MVC 4 application built using Visual Studio 2012 and Entity Framework 4.  This application is best viewed in Chrome or 
+        Firefox but will work in IE.  This application is being submitted as a homework assignment.  There is a companion application that is built 
+        using only client side technologies that shares a similar UI and framework.  Ultimately the two applications would likely share the same data sources.
+
+    </p>
+
+    <p>
+        Use the Home page to get general information about the website and to navigate to other pages.
+    </p>
+
+    <p>
+        Use the Recipe page to find, submit and review beer recipes.
+    </p>
+
+    <p>
+        Use the contacts page to send an email or find the address or phone number of the site administrator.
+    </p>
+</article>
+
+<aside>
+    <h3>Links</h3>
+    <ul>
+       <li> @Html.ActionLink("BOTM", "Details/5", "Recipes")</li>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("Recipes", "Index", "Recipes")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>

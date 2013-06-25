@@ -1,0 +1,24 @@
+﻿@model ShipCompliantMVC.Models.Ingredient
+
+<div class="editorRow">
+    @using(Html.BeginCollectionItem("Ingredients")) {
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Amount)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.Amount)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Unit)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Unit, ViewData["listUnit"] as SelectList)
+        </div>
+    }
+</div>

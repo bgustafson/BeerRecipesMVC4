@@ -1,0 +1,65 @@
+﻿@model ShipCompliantMVC.Models.Recipe
+
+@{
+    ViewBag.Title = "Review Recipe";
+}
+
+<h2>Rate This Recipe</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Recipe</legend>
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.DateAdded)
+        @Html.HiddenFor(model => model.Author)
+        @Html.HiddenFor(model => model.Name)
+        @Html.HiddenFor(model => model.Style)
+        @Html.HiddenFor(model => model.MashType)
+        @Html.HiddenFor(model => model.Description)
+        @Html.HiddenFor(model => model.PrepTime)
+        @Html.HiddenFor(model => model.Cost)
+        @Html.HiddenFor(model => model.PrimaryFermentDays)
+        @Html.HiddenFor(model => model.SecondaryFermentDays)
+
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <br/>
+        <br/>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rating)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Rating, new { @type = "range", min = 0, max = 5, step = .1, onchange="$('#sliderVal').html(this.value);"})
+            @Html.ValidationMessageFor(model => model.Rating)
+            <div id="sliderVal"></div>
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

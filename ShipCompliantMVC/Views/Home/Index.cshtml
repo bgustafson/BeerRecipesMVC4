@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<article>
+    <h3>Stories:</h3>
+    <div id="box">   
+        <ul id="slider">
+	        <li id="1" >
+		        <img src="../../Images/batches.jpg" alt="batches of beer" width="700" height="438" />
+		        <p><span>Show off your beer as it ferments!</span></p>
+	        </li>
+	        <li id="2">
+		        <img src="../../Images/class.jpg" alt="class" width="700" height="438" />
+		        <p><span>Sign up for a class to learn about homebrewing!</span></p>
+	        </li>
+	        <li id="3">
+		        <img src="../../Images/season.jpg" alt="seasonal beer setups" width="700" height="438" />
+		        <p><span>Submit seasonal brewing ideas and reseach other user submitted ideas!</span></p>
+	        </li>
+            <li id="4">
+                <img src="../../Images/setup.jpg" alt="show off your setup" width="700" height="438" />
+                <p><span>Show us your rigs!</span></p>
+            </li>
+            <li id="5">
+		        <img src="../../Images/obama.jpg" alt="obama the homebrewer" width="700" height="438" />
+		        <p><span>Is President Obama a homebrewer?</span></p>
+	        </li>
+        </ul>
+
+        <ul id="thumb">
+	        <li><a href="#1"><img src="../../Images/batches.jpg" alt="batches of beer" width="50" height="50" /></a></li>
+	        <li><a href="#2"><img src="../../Images/class.jpg" alt="class" width="50" height="50" /></a></li>
+	        <li><a href="#3"><img src="../../Images/season.jpg" alt="seasonal beer setups" width="50" height="50" /></a></li>
+            <li><a href="#4"><img src="../../Images/setup.jpg" alt="show off your setup" width="50" height="50" /></a></li>
+            <li><a href="#5"><img src="../../Images/obama.jpg" alt="obama the homebrewer" width="50" height="50" /></a></li>
+        </ul>
+    </div>
+
+    <h3>Resources:</h3>
+    <ol class="round">
+        <li class="one">
+            <h5>Beer Recipes</h5>
+            A repository of user submitted beer recipes.  Feel free to become a contributor and add in your own personal favorite
+            recipes and review others.
+            @Html.ActionLink("Learn more…", "Index", "Recipes")
+        </li>
+
+        <li class="two">
+            <h5>Homebrew Forum</h5>
+            Coming Soon. A location where homebrewers can ask questions and get answers to anything
+            relating to making beer at home.
+            @Html.ActionLink("Learn more…", "Index", "Recipes")
+        </li>
+
+        <li class="three">
+            <h5>Links</h5>
+            Coming Soon. A set of links to other resources for homebrewing supplies and other fun
+            links.
+            @Html.ActionLink("Learn more…", "Index", "Recipes")
+        </li>
+        
+        <li class="four">
+            <h5>Events</h5>
+            Coming Soon. A location where homebrewer events from around the country are posted.
+            relating to making beer at home.
+            @Html.ActionLink("Learn more…", "Index", "Recipes")
+        </li>
+        
+        <li class="five">
+            <h5>Beer Travel</h5>
+            Coming Soon. A location where homebrewers can research different beer nerd destinations.
+            @Html.ActionLink("Learn more…", "Index", "Recipes")
+        </li>
+    </ol>
+</article>
+
+<aside>
+    <h3>BOTM</h3>
+    <p>
+        Every month a new recipe is selected as Beer Of The Month.  The recipe is chosen to highlight the season or availability of in-season ingredients.
+    </p>
+    <h6>George Washington Apple Amber Ale</h6>
+    @Html.ActionLink("Details", "Details/5", "Recipes")
+    <ul>
+        <li>2.5 gallons Mott's Natural Apple Juice</li>
+        <li>3 pounds Briess Sparkling Amber Dry Malt Extract</li>
+        <li>0.60 ounces Warrior Hops (17.2AA)</li>
+        <li>Yeast Nutrient</li>
+        <li>White Labs English Ale Yeast Cake</li>
+    </ul>
+</aside>

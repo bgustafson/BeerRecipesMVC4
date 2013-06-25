@@ -1,0 +1,123 @@
+﻿@using System.ComponentModel
+@model ShipCompliantMVC.Models.Recipe
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Rating, new {@Value = 0.0})
+    @Html.HiddenFor(model => model.DateAdded, new {@Value = DateTime.Now})
+
+
+    <fieldset>
+        <legend>Recipe</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Author)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Author)
+            @Html.ValidationMessageFor(model => model.Author)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Style)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Style, ViewData["listStyles"] as SelectList)
+            @Html.ValidationMessageFor(model => model.Style)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MashType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.MashType, ViewData["listType"] as SelectList)
+            @Html.ValidationMessageFor(model => model.MashType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrepTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrepTime)
+            @Html.ValidationMessageFor(model => model.PrepTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cost)
+            @Html.ValidationMessageFor(model => model.Cost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrimaryFermentDays)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrimaryFermentDays)
+            @Html.ValidationMessageFor(model => model.PrimaryFermentDays)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SecondaryFermentDays)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SecondaryFermentDays)
+            @Html.ValidationMessageFor(model => model.SecondaryFermentDays)
+        </div>
+               
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ingredients)
+        </div>
+        <div id="editorRowsIngredients">
+            
+        </div>
+         @Html.ActionLink("Add an ingredient", "BlankEditorRowIngredient", null, new { id = "addItemIngredient" })
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Steps)
+        </div>
+        <div id="editorRowsSteps">
+            
+        </div>
+         @Html.ActionLink("Add a step", "BlankEditorRowStep", null, new { id = "addItemStep" })
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/myScript.js")
+}
